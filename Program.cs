@@ -1,4 +1,5 @@
-﻿using System;
+﻿using challenges_and_data_structures1.MaxValue;
+using System;
 
 namespace ConsoleApp11
 {
@@ -6,6 +7,9 @@ namespace ConsoleApp11
     {
         static void Main(string[] args)
         {
+            int[] findMax = new int[5] { 15, 35, 60, 80, 16 };
+            Console.WriteLine($"The maximmum number is: {MaximumValue.FindMaximum(findMax)}");
+
             int[] Array = new int[5] { 1, 2, 3, 4, 5 };
             saja(Array);
 
