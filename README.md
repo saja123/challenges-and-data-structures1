@@ -8,4 +8,10 @@
 ![Most Frequent Number Whiteboard](./whiteboard-challenges/challenge01/mostFreq.png)
 
 ## oUTPUT For All
-![Output](./whiteboard-challenges/output)
+![Output](./whiteboard-challenges/output/must.png)
+
+### Challenge 04: Insert Value in Middle of Array
+![Insert Middle Value](./whiteboard-challenges/InsertMiddleValue/InsertMiddle.png)
+
+### Challenge 04: Insert Value in Middle of Array OutPut
+![Insert Middle Value](./whiteboard-challenges/InsertMiddleValue/InsertMiddleOUTPUT.png)
