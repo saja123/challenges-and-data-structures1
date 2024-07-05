@@ -1,32 +1,70 @@
-﻿using challenges_and_data_structures1.MaxValue;
+﻿using challenges_and_data_structures1;
+using challenges_and_data_structures1.MaxValue;
 using System;
 
 namespace ConsoleApp11
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-           // int[] findMax = new int[5] { 15, 35, 60, 80, 16 };
-           // Console.WriteLine($"The maximmum number is: {MaximumValue.FindMaximum(findMax)}");
+            // int[] findMax = new int[5] { 15, 35, 60, 80, 16 };
+            // Console.WriteLine($"The maximmum number is: {MaximumValue.FindMaximum(findMax)}");
 
-           // int[] Array = new int[5] { 1, 2, 3, 4, 5 };
-           // saja(Array);
+            // int[] Array = new int[5] { 1, 2, 3, 4, 5 };
+            // saja(Array);
 
 
-           //int[] Array2 = new int[12] { 4, 4, 4, 2, 1, 2, 2, 3, 3, 3, 5, 5 };
-           //int mostFrequentNumber = saja2(Array2);
+            //int[] Array2 = new int[12] { 4, 4, 4, 2, 1, 2, 2, 3, 3, 3, 5, 5 };
+            //int mostFrequentNumber = saja2(Array2);
 
-           //Console.WriteLine("Most Frequent Number: " + mostFrequentNumber);
-           // Console.WriteLine();
+            //Console.WriteLine("Most Frequent Number: " + mostFrequentNumber);
+            // Console.WriteLine();
+            string input = "csharp is programming language";
+            string result = ReverseWords.ReverseOrder(input);
+            Console.WriteLine(result);
 
-            Console.WriteLine("insert 5 in the middle array");
-            int[] array1 = { 1, 2, 3, 4 };
-            int[] result1 = InsertMiddleValue(array1, 5);
-            PrintArray(result1); 
+            //Console.WriteLine("insert 5 in the middle array");
+            //int[] array1 = { 1, 2, 3, 4 };
+            //int[] result1 = InsertMiddleValue(array1, 5);
+            //PrintArray(result1);
 
         }
+        public static int[] CommonElements(int[] array1, int[] array2)
+        {
+            List<int> commonElements = new List<int>();
 
+            for (int i = 0; i < array1.Length; i++)
+            {
+                for (int j = 0; j < array2.Length; j++)
+                {
+                    if (array1[i] == array2[j])
+                    {
+                        bool isAlreadyInCommon = false;
+                        for (int k = 0; k < commonElements.Count; k++)
+                        {
+                            if (commonElements[k] == array1[i])
+                            {
+                                isAlreadyInCommon = true;
+                                break;
+                            }
+                        }
+                        if (!isAlreadyInCommon)
+                        {
+                            commonElements.Add(array1[i]);
+                        }
+                        break;
+                    }
+                }
+            }
+
+            int[] result = new int[commonElements.Count];
+            for (int i = 0; i < commonElements.Count; i++)
+            {
+                result[i] = commonElements[i];
+            }
+            return result;
+        }
         private static int[] saja(int[] Array)
         {
 
