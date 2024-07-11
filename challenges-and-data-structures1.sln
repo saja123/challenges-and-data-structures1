@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challenges-and-data-structures1", "challenges-and-data-structures1.csproj", "{E1C5424F-1290-489D-B3DF-B87C26764EAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challengesAndDataStructuresTest", "..\challengesAndDataStructuresTest\challengesAndDataStructuresTest.csproj", "{20806402-A66E-4005-831E-66177D487CF9}"
+<<<<<<< HEAD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTest", "..\LinkedListTest\LinkedListTest.csproj", "{CF4FD235-2673-400B-83F3-92166AA3432F}"
+=======
+>>>>>>> master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
