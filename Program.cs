@@ -1,5 +1,6 @@
 ﻿using challenges_and_data_structures1;
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp11
 {
@@ -107,18 +108,53 @@ namespace ConsoleApp11
             //PrintArray(result1);
 
 
-            LinkedList linkedList = new LinkedList();
+            LinkedList list1 = new LinkedList();
+            LinkedList list2 = new LinkedList();
+            LinkedList list3 = new LinkedList();
+            ////linkedList.PrintList();
+            //linkedList.AddNode(5);
+            //linkedList.AddNode(10);
+            //linkedList.AddNode(20);
+            //linkedList.AddNode(30);
+
             //linkedList.PrintList();
-            linkedList.AddNode(5);
-            linkedList.AddNode(10);
-            linkedList.AddNode(20);
-            linkedList.AddNode(30);
 
-            linkedList.PrintList();
+            //linkedList.Remove(10);
 
-            linkedList.Remove(10);
+            //linkedList.PrintList();
+            int[] arr1 = { 5, 20, 20, 10, 5, 10 };
+            int[] arr2 = { 1, 2, 3, 2, 4, 3 };
+            int[] arr3 = { 7, 7, 7, 7 };
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                list1.AddNode(arr1[i]);
+            }
+            Console.WriteLine("Case 1 input and output");
+            list1.PrintList();
 
-            linkedList.PrintList();
+            list1.RemoveDuplicate();
+            list1.PrintList();
+
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                list2.AddNode(arr2[i]);
+            }
+            Console.WriteLine("\nCase 2 input and output");
+
+            list2.PrintList();
+
+            list2.RemoveDuplicate();
+            list2.PrintList();
+
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                list3.AddNode(arr3[i]);
+            }
+            Console.WriteLine("\nCase 3 input and output");
+
+            list3.PrintList();  
+            list3.RemoveDuplicate();
+            list3.PrintList();
 
         }
         public static int[] CommonElements(int[] array1, int[] array2)
