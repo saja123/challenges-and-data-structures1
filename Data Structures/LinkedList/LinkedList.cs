@@ -2,7 +2,7 @@
 {
     public class LinkedList
     {
-        private Node head;
+        public Node head;
 
         public void AddNode(int data)
         {
@@ -80,6 +80,27 @@
 
             }
         }
+        public void RemoveDuplicate()
+        {
+            Node current = head;
+            while (current != null)
+            {
+                Node index = current;
+                while (index.Next != null)
+                {
+                    if (current.Data == index.Next.Data)
+                    {
+                        index.Next = index.Next.Next;
+                    }
+                    else
+                    {
+                        index = index.Next;
+                    }
+                }
+                current = current.Next;
+            }
+        }
+
     }
 }
 
