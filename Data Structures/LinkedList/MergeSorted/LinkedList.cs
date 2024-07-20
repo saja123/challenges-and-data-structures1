@@ -38,7 +38,11 @@
 
         public void Remove(int data)
         {
-            if (head == null) Console.WriteLine("List is empty");
+            if (head == null)
+            {
+                Console.WriteLine("List is empty");
+                return;
+            }
 
             if (head.Data == data)
             {
@@ -57,6 +61,7 @@
             if (current == null)
             {
                 Console.WriteLine("Data not found in list");
+                return;
             }
 
             previous.Next = current.Next;
@@ -66,20 +71,21 @@
         {
             Node current = head;
             if (current == null)
+            {
                 Console.WriteLine("The List is empty");
+            }
             else
             {
                 Console.Write("List: ");
-                while (current != null)//
+                while (current != null)
                 {
-
                     Console.Write($"{current.Data} --> ");
                     current = current.Next;
                 }
                 Console.WriteLine("Null");
-
             }
         }
+
         public void RemoveDuplicate()
         {
             Node current = head;
@@ -101,6 +107,42 @@
             }
         }
 
+        public LinkedList MergeSortedLists(LinkedList list1, LinkedList list2)
+        {
+            Node current1 = list1.head;
+            Node current2 = list2.head;
+
+            LinkedList mergedList = new LinkedList();
+
+            while (current1 != null && current2 != null)
+            {
+                if (current1.Data <= current2.Data)
+                {
+                    mergedList.AddNode(current1.Data);
+                    current1 = current1.Next;
+                }
+                else
+                {
+                    mergedList.AddNode(current2.Data);
+                    current2 = current2.Next;
+                }
+            }
+
+            while (current1 != null)
+            {
+                mergedList.AddNode(current1.Data);
+                current1 = current1.Next;
+            }
+
+            while (current2 != null)
+            {
+                mergedList.AddNode(current2.Data);
+                current2 = current2.Next;
+            }
+
+            return mergedList;
+        }
     }
 }
+
 

@@ -7,7 +7,7 @@ namespace challenges_and_data_structures1
         public Node Next { get; set; }
         public Node(int data)
         {
-            Data = data; // 5 -Next-> 10  NodeA = NodeB
+            Data = data; 
             Next = null;
         }
     }
