@@ -1,85 +1,85 @@
-﻿namespace challenges_and_data_structures1
-{
-    public class LinkedList
-    {
-        private Node head;
+﻿//namespace challenges_and_data_structures1
+//{
+//    public class LinkedList
+//    {
+//        private Node head;
 
-        public void AddNode(int data)
-        {
-            Node newNode = new Node(data);
-            if (head == null)
-            {
-                head = newNode;
-            }
-            else
-            {
-                Node current = head;
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = newNode;
-            }
-        }
+//        public void AddNode(int data)
+//        {
+//            Node newNode = new Node(data);
+//            if (head == null)
+//            {
+//                head = newNode;
+//            }
+//            else
+//            {
+//                Node current = head;
+//                while (current.Next != null)
+//                {
+//                    current = current.Next;
+//                }
+//                current.Next = newNode;
+//            }
+//        }
 
-        public bool Includes(int data)
-        {
-            Node current = head;
-            while (current != null)
-            {
-                if (current.Data == data)
-                {
-                    return true;
-                }
-                current = current.Next;
-            }
-            return false;
-        }
+//        public bool Includes(int data)
+//        {
+//            Node current = head;
+//            while (current != null)
+//            {
+//                if (current.Data == data)
+//                {
+//                    return true;
+//                }
+//                current = current.Next;
+//            }
+//            return false;
+//        }
 
-        public void Remove(int data)
-        {
-            if (head == null) Console.WriteLine("List is empty");
+//        public void Remove(int data)
+//        {
+//            if (head == null) Console.WriteLine("List is empty");
 
-            if (head.Data == data)
-            {
-                head = head.Next;
-                return;
-            }
+//            if (head.Data == data)
+//            {
+//                head = head.Next;
+//                return;
+//            }
 
-            Node current = head;
-            Node previous = null;
-            while (current != null && current.Data != data)
-            {
-                previous = current;
-                current = current.Next;
-            }
+//            Node current = head;
+//            Node previous = null;
+//            while (current != null && current.Data != data)
+//            {
+//                previous = current;
+//                current = current.Next;
+//            }
 
-            if (current == null)
-            {
-                Console.WriteLine("Data not found in list");
-            }
+//            if (current == null)
+//            {
+//                Console.WriteLine("Data not found in list");
+//            }
 
-            previous.Next = current.Next;
-        }
+//            previous.Next = current.Next;
+//        }
 
-        public void PrintList()
-        {
-            Node current = head;
-            if (current == null)
-                Console.WriteLine("The List is empty");
-            else
-            {
-                Console.Write("List: ");
-                while (current != null)//
-                {
+//        public void PrintList()
+//        {
+//            Node current = head;
+//            if (current == null)
+//                Console.WriteLine("The List is empty");
+//            else
+//            {
+//                Console.Write("List: ");
+//                while (current != null)//
+//                {
 
-                    Console.Write($"{current.Data} --> ");
-                    current = current.Next;
-                }
-                Console.WriteLine("Null");
+//                    Console.Write($"{current.Data} --> ");
+//                    current = current.Next;
+//                }
+//                Console.WriteLine("Null");
 
-            }
-        }
-    }
-}
+//            }
+//        }
+//    }
+//}
 

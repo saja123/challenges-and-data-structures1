@@ -6,11 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challenges-and-data-structures1", "challenges-and-data-structures1.csproj", "{E1C5424F-1290-489D-B3DF-B87C26764EAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challengesAndDataStructuresTest", "..\challengesAndDataStructuresTest\challengesAndDataStructuresTest.csproj", "{20806402-A66E-4005-831E-66177D487CF9}"
-<<<<<<< HEAD
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListTest", "..\LinkedListTest\LinkedListTest.csproj", "{CF4FD235-2673-400B-83F3-92166AA3432F}"
-=======
->>>>>>> master
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListTest", "..\LinkedListTest\LinkedListTest.csproj", "{CF4FD235-2673-400B-83F3-92166AA3432F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueueTest", "..\StackAndQueueTest\StackAndQueueTest.csproj", "{2B4F2441-0352-4AD9-A238-AC6C8428C47F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +29,10 @@ Global
 		{CF4FD235-2673-400B-83F3-92166AA3432F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF4FD235-2673-400B-83F3-92166AA3432F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF4FD235-2673-400B-83F3-92166AA3432F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4F2441-0352-4AD9-A238-AC6C8428C47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4F2441-0352-4AD9-A238-AC6C8428C47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4F2441-0352-4AD9-A238-AC6C8428C47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4F2441-0352-4AD9-A238-AC6C8428C47F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
