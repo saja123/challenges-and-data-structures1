@@ -1,15 +1,13 @@
-# Stack And Queue
+# Reverse Stack Using Queue
 
-### Stac&Queue - BigO
-![BigO.png](BigOpng)
+### Reverse Stack Using Queue - Miro
+
+![MiroStackandQueue](MiroStackandQueue.png)
 
 
 ### Stack&Queue - output
-![Stack&Queue Output](StackAndQueueOutput.png)
+![OutputStackandQueue2](OutputStackandQueue2.png)
 
-## Test-Stack and Queue.png
-![TestStack and Queue.png](TestQueue&Stack.png)
-
-## Test-Stack and Queue2.png
-![TestStack and Queue.png](TestStack&Queue2.png)
+## Test-Stack and Queue - Tests
+![TestsstackandQueue2](TestsstackandQueue2.png)
 

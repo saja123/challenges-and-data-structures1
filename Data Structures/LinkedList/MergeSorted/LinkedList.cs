@@ -35,6 +35,17 @@
             }
             return false;
         }
+
+        public int RemoveHead()
+        {
+            if (head == null) Console.WriteLine("The List is Empty");
+
+            Node node = head;
+            head = node.Next;
+            node.Next = null;
+            return node.Data;
+
+        }
         public void Remove(int data)
         {
             if (head == null)
@@ -69,10 +80,19 @@
 
             previous.Next = current.Next;
         }
-       
 
+        public void AddToHead(int newValue)
+        {
+            Node node = new Node(newValue);
+            if (head == null) head = node;
+            else
+            {
+                node.Next = head;
+                head = node;
+            }
+        }
 
-            public void PrintList()
+        public void PrintList()
             {
                 Node current = head;
                 if (current == null)
@@ -81,7 +101,7 @@
                 }
                 else
                 {
-                    Console.Write("List: ");
+                    Console.Write("Head: ");
                     while (current != null)
                     {
                         Console.Write($"{current.Data} --> ");

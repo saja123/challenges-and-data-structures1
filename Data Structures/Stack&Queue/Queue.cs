@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace challenges_and_data_structures1.Data_Structures.Stack_Queue
+namespace challenges_and_data_structures1
 {
     public class Queue
     {
