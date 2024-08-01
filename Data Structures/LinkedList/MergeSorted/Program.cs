@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp11
+namespace challenges_and_data_structures1
 {
 
     //        //private static int[] saja(int[] Array)
@@ -86,6 +86,37 @@ namespace ConsoleApp11
     {
         static void Main(string[] args)
         {
+
+            Stack stack = new Stack();
+
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+
+            Console.WriteLine(stack.IsEmpty());
+
+            Console.WriteLine("Stack before reversing:");
+            stack.PrintStack();
+
+
+            stack.ReverseStack();
+
+            Console.WriteLine("Stack after reversing:");
+            stack.PrintStack();
+
+            stack.Push(6);
+            stack.Push(7);
+
+            Console.WriteLine("Stack before reversing again:");
+            stack.PrintStack();
+
+
+            stack.ReverseStack();
+
+            Console.WriteLine("Stack after reversing again:");
+            stack.PrintStack();
             // int[] findMax = new int[5] { 15, 35, 60, 80, 16 };
             // Console.WriteLine($"The maximmum number is: {MaximumValue.FindMaximum(findMax)}");
 
@@ -143,25 +174,25 @@ namespace ConsoleApp11
             //list3.RemoveDuplicate();
             //list3.PrintList();
 
-            LinkedList sortedList1 = new LinkedList();
-            sortedList1.AddNode(1);
-            sortedList1.AddNode(3);
-            sortedList1.AddNode(5);
-            Console.WriteLine("Case 1:");
-            sortedList1.PrintList();
+            //LinkedList sortedList1 = new LinkedList();
+            //sortedList1.AddNode(1);
+            //sortedList1.AddNode(3);
+            //sortedList1.AddNode(5);
+            //Console.WriteLine("Case 1:");
+            //sortedList1.PrintList();
 
-            LinkedList sortedList2 = new LinkedList();
-            sortedList2.AddNode(2);
-            sortedList2.AddNode(4);
-            sortedList2.AddNode(6);
+            //LinkedList sortedList2 = new LinkedList();
+            //sortedList2.AddNode(2);
+            //sortedList2.AddNode(4);
+            //sortedList2.AddNode(6);
 
-            sortedList2.PrintList();
+            //sortedList2.PrintList();
 
-            LinkedList mergedList = new LinkedList();
-            mergedList = mergedList.MergeSortedLists(sortedList1, sortedList2);
+            //LinkedList mergedList = new LinkedList();
+            //mergedList = mergedList.MergeSortedLists(sortedList1, sortedList2);
 
-            Console.WriteLine("\nMerged Sorted List:");
-            mergedList.PrintList();
+            //Console.WriteLine("\nMerged Sorted List:");
+            //mergedList.PrintList();
 
 
             //            List 1: Head-> 5-> 10-> 15->Null
@@ -171,25 +202,25 @@ namespace ConsoleApp11
             //List 1: Head-> 10-> 20-> 30->Null
             //List 2: Head-> 5-> 15-> 25-> 35->Null
             //Merged List: Head-> 5-> 10-> 15-> 20-> 25-> 30-> 35->Null
-            LinkedList sortedList3 = new LinkedList();
-            sortedList3.AddNode(5);
-            sortedList3.AddNode(10);
-            sortedList3.AddNode(15);
-            Console.WriteLine("\nCase 2:");
-            sortedList3.PrintList();
+            //LinkedList sortedList3 = new LinkedList();
+            //sortedList3.AddNode(5);
+            //sortedList3.AddNode(10);
+            //sortedList3.AddNode(15);
+            //Console.WriteLine("\nCase 2:");
+            //sortedList3.PrintList();
 
-            LinkedList sortedList4 = new LinkedList();
-            sortedList4.AddNode(2);
-            sortedList4.AddNode(3);
-            sortedList4.AddNode(20);
-            sortedList4.PrintList();
+            //LinkedList sortedList4 = new LinkedList();
+            //sortedList4.AddNode(2);
+            //sortedList4.AddNode(3);
+            //sortedList4.AddNode(20);
+            //sortedList4.PrintList();
 
 
-            LinkedList mergedList2 = new LinkedList();
-            mergedList2 = mergedList2.MergeSortedLists(sortedList3, sortedList4);
+            //LinkedList mergedList2 = new LinkedList();
+            //mergedList2 = mergedList2.MergeSortedLists(sortedList3, sortedList4);
 
-            Console.WriteLine("\nMerged Sorted List:");
-            mergedList2.PrintList();
+            //Console.WriteLine("\nMerged Sorted List:");
+            //mergedList2.PrintList();
 
         }
         //public static int[] CommonElements(int[] array1, int[] array2)

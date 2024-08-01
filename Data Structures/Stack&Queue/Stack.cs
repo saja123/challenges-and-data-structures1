@@ -1,46 +1,59 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace challenges_and_data_structures1.Data_Structures.Stack_Queue
+namespace challenges_and_data_structures1
 {
     public class Stack
     {
-        private Node top;
+        private LinkedList linke;
 
         public Stack()
         {
-            top = null;
+            linke = new LinkedList();
         }
 
         public void Push(int data)
         {
-            Node newNode = new Node(data);
-            newNode.Next = top;
-            top = newNode;
+            linke.AddToHead(data);
         }
 
         public int Pop()
         {
-            if (IsEmpty())
-                throw new InvalidOperationException("Stack is empty");
-            int data = top.Data;
-            top = top.Next;
-            return data;
+            if (IsEmpty()) throw new InvalidOperationException("Stack is empty");
+            return linke.RemoveHead();
         }
 
         public int Peek()
         {
-            if (IsEmpty())
-                throw new InvalidOperationException("Stack is empty");
-            return top.Data;
+            if (IsEmpty()) throw new InvalidOperationException("Stack is empty");
+            return linke.head.Data;
         }
 
         public bool IsEmpty()
         {
-            return top == null;
+            return linke.head == null;
+        }
+        public void PrintStack()
+        {
+           linke.PrintList();
+        }
+
+        public void ReverseStack()
+        {
+            if (IsEmpty()) return;
+            Queue queue = new Queue();
+            while (!IsEmpty())
+            {
+                queue.Enqueue(Pop());
+            }
+            while (!queue.IsEmpty())
+            {
+                Push(queue.Dequeue());
+            }
         }
     }
 
