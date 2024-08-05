@@ -1,4 +1,5 @@
-﻿namespace challenges_and_data_structures1
+﻿
+namespace challenges_and_data_structures1
 {
     public class LinkedList
     {
@@ -93,81 +94,81 @@
         }
 
         public void PrintList()
+        {
+            Node current = head;
+            if (current == null)
             {
-                Node current = head;
-                if (current == null)
-                {
-                    Console.WriteLine("The List is empty");
-                }
-                else
-                {
-                    Console.Write("Head: ");
-                    while (current != null)
-                    {
-                        Console.Write($"{current.Data} --> ");
-                        current = current.Next;
-                    }
-                    Console.WriteLine("Null");
-                }
+                Console.WriteLine("The List is empty");
             }
-
-            public void RemoveDuplicate()
+            else
             {
-                Node current = head;
+                Console.Write("Head: ");
                 while (current != null)
                 {
-                    Node index = current;
-                    while (index.Next != null)
-                    {
-                        if (current.Data == index.Next.Data)
-                        {
-                            index.Next = index.Next.Next;
-                        }
-                        else
-                        {
-                            index = index.Next;
-                        }
-                    }
+                    Console.Write($"{current.Data} --> ");
                     current = current.Next;
                 }
+                Console.WriteLine("Null");
             }
+        }
 
-            public LinkedList MergeSortedLists(LinkedList list1, LinkedList list2)
+        public void RemoveDuplicate()
+        {
+            Node current = head;
+            while (current != null)
             {
-                Node current1 = list1.head;
-                Node current2 = list2.head;
-
-                LinkedList mergedList = new LinkedList();
-
-                while (current1 != null && current2 != null)
+                Node index = current;
+                while (index.Next != null)
                 {
-                    if (current1.Data <= current2.Data)
+                    if (current.Data == index.Next.Data)
                     {
-                        mergedList.AddNode(current1.Data);
-                        current1 = current1.Next;
+                        index.Next = index.Next.Next;
                     }
                     else
                     {
-                        mergedList.AddNode(current2.Data);
-                        current2 = current2.Next;
+                        index = index.Next;
                     }
                 }
+                current = current.Next;
+            }
+        }
 
-                while (current1 != null)
+        public LinkedList MergeSortedLists(LinkedList list1, LinkedList list2)
+        {
+            Node current1 = list1.head;
+            Node current2 = list2.head;
+
+            LinkedList mergedList = new LinkedList();
+
+            while (current1 != null && current2 != null)
+            {
+                if (current1.Data <= current2.Data)
                 {
                     mergedList.AddNode(current1.Data);
                     current1 = current1.Next;
                 }
-
-                while (current2 != null)
+                else
                 {
                     mergedList.AddNode(current2.Data);
                     current2 = current2.Next;
                 }
-
-                return mergedList;
             }
+
+            while (current1 != null)
+            {
+                mergedList.AddNode(current1.Data);
+                current1 = current1.Next;
+            }
+
+            while (current2 != null)
+            {
+                mergedList.AddNode(current2.Data);
+                current2 = current2.Next;
+            }
+
+            return mergedList;
         }
     }
+}
 
 

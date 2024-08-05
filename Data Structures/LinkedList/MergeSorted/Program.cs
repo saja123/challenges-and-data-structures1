@@ -1,4 +1,5 @@
 ﻿using challenges_and_data_structures1;
+using StackAndQueue.DeleteMiddleElement;
 using System;
 using System.Collections.Generic;
 
@@ -86,37 +87,64 @@ namespace challenges_and_data_structures1
     {
         static void Main(string[] args)
         {
-
-            Stack stack = new Stack();
-
-            stack.Push(1);
-            stack.Push(2);
+            StackWithDeleteMiddle stack = new StackWithDeleteMiddle();
+            stack.Push(7);
+            stack.Push(14);
             stack.Push(3);
-            stack.Push(4);
+            stack.Push(8);
             stack.Push(5);
 
-            Console.WriteLine(stack.IsEmpty());
+            Console.WriteLine("Before deleting middle:");
+            stack.PrintStack();
 
-            Console.WriteLine("Stack before reversing:");
+            stack.DeleteMiddle();
+
+            Console.WriteLine("After deleting middle:");
+            stack.PrintStack();
+
+            stack.Push(2);
+            stack.Push(9);
+            stack.Push(11);
+
+            Console.WriteLine("Before deleting middle:");
+            stack.PrintStack();
+
+            stack.DeleteMiddle();
+
+            Console.WriteLine("After deleting middle:");
             stack.PrintStack();
 
 
-            stack.ReverseStack();
+            //Stack stack = new Stack();
 
-            Console.WriteLine("Stack after reversing:");
-            stack.PrintStack();
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
 
-            stack.Push(6);
-            stack.Push(7);
+            //Console.WriteLine(stack.IsEmpty());
 
-            Console.WriteLine("Stack before reversing again:");
-            stack.PrintStack();
+            //Console.WriteLine("Stack before reversing:");
+            //stack.PrintStack();
 
 
-            stack.ReverseStack();
+            //stack.ReverseStack();
 
-            Console.WriteLine("Stack after reversing again:");
-            stack.PrintStack();
+            //Console.WriteLine("Stack after reversing:");
+            //stack.PrintStack();
+
+            //stack.Push(6);
+            //stack.Push(7);
+
+            //Console.WriteLine("Stack before reversing again:");
+            //stack.PrintStack();
+
+
+            //stack.ReverseStack();
+
+            //Console.WriteLine("Stack after reversing again:");
+            //stack.PrintStack();
             // int[] findMax = new int[5] { 15, 35, 60, 80, 16 };
             // Console.WriteLine($"The maximmum number is: {MaximumValue.FindMaximum(findMax)}");
 
