@@ -1,110 +1,112 @@
-﻿namespace TreeImplementation
-{
-    public class BinarySearchTree : BinaryTree
-    {
-        public BinarySearchTree(int value) : base(value)
-        {
-        }
+﻿//using TreeImplementation.MirrorTree;
 
-        public void Add(int value)
-        {
-            Add(Root, value);
-        }
+//namespace TreeImplementation
+//{
+//    public class BinarySearchTree : BinaryTree
+//    {
+//        public BinarySearchTree(int value) : base(value)
+//        {
+//        }
 
-        private void Add(Node node, int value)
-        {
-            if (value < node.Value)
-            {
-                if (node.Left == null)
-                {
-                    node.Left = new Node(value);
-                }
-                else
-                {
-                    Add(node.Left, value);
-                }
-            }
-            else if (value > node.Value)
-            {
-                if (node.Right == null)
-                {
-                    node.Right = new Node(value);
-                }
-                else
-                {
-                    Add(node.Right, value);
-                }
-            }
-        }
+//        public void Add(int value)
+//        {
+//            Add(Root, value);
+//        }
 
-        public bool Contains(int value)
-        {
-            return Contains(Root, value);
-        }
+//        private void Add(Node node, int value)
+//        {
+//            if (value < node.Value)
+//            {
+//                if (node.Left == null)
+//                {
+//                    node.Left = new Node(value);
+//                }
+//                else
+//                {
+//                    Add(node.Left, value);
+//                }
+//            }
+//            else if (value > node.Value)
+//            {
+//                if (node.Right == null)
+//                {
+//                    node.Right = new Node(value);
+//                }
+//                else
+//                {
+//                    Add(node.Right, value);
+//                }
+//            }
+//        }
 
-        private bool Contains(Node node, int value)
-        {
-            if (node == null)
-                return false;
+//        public bool Contains(int value)
+//        {
+//            return Contains(Root, value);
+//        }
 
-            if (value < node.Value)
-                return Contains(node.Left, value);
-            else if (value > node.Value)
-                return Contains(node.Right, value);
-            else
-                return true; 
-        }
+//        private bool Contains(Node node, int value)
+//        {
+//            if (node == null)
+//                return false;
 
-        public void Remove(int value)
-        {
-            Root = Remove(Root, value);
-        }
+//            if (value < node.Value)
+//                return Contains(node.Left, value);
+//            else if (value > node.Value)
+//                return Contains(node.Right, value);
+//            else
+//                return true; 
+//        }
 
-        private Node Remove(Node node, int value)
-        {
-            if (node == null)
-                return node;
+//        public void Remove(int value)
+//        {
+//            Root = Remove(Root, value);
+//        }
 
-            if (value < node.Value)
-            {
-                node.Left = Remove(node.Left, value);
-            }
-            else if (value > node.Value)
-            {
-                node.Right = Remove(node.Right, value);
-            }
-            else
-            {
-                if (node.Left == null && node.Right == null)
-                {
-                    return null;
-                }
-                if (node.Left == null)
-                {
-                    return node.Right;
-                }
-                if (node.Right == null)
-                {
-                    return node.Left;
-                }
+//        private Node Remove(Node node, int value)
+//        {
+//            if (node == null)
+//                return node;
 
-                node.Value = MinValue(node.Right);
-                node.Right = Remove(node.Right, node.Value);
-            }
+//            if (value < node.Value)
+//            {
+//                node.Left = Remove(node.Left, value);
+//            }
+//            else if (value > node.Value)
+//            {
+//                node.Right = Remove(node.Right, value);
+//            }
+//            else
+//            {
+//                if (node.Left == null && node.Right == null)
+//                {
+//                    return null;
+//                }
+//                if (node.Left == null)
+//                {
+//                    return node.Right;
+//                }
+//                if (node.Right == null)
+//                {
+//                    return node.Left;
+//                }
 
-            return node;
-        }
+//                node.Value = MinValue(node.Right);
+//                node.Right = Remove(node.Right, node.Value);
+//            }
 
-        private int MinValue(Node node)
-        {
-            int minValue = node.Value;
-            while (node.Left != null)
-            {
-                minValue = node.Left.Value;
-                node = node.Left;
-            }
-            return minValue;
-        }
+//            return node;
+//        }
+
+//        private int MinValue(Node node)
+//        {
+//            int minValue = node.Value;
+//            while (node.Left != null)
+//            {
+//                minValue = node.Left.Value;
+//                node = node.Left;
+//            }
+//            return minValue;
+//        }
         
-    }
-}
+//    }
+//}
