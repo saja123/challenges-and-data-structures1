@@ -1,98 +1,55 @@
-using TreeImplementation;
-using Xunit;
 using System.Collections.Generic;
+using Xunit;
+using TreeImplementation;
 
 namespace TreeImplementation.Tests
 {
     public class BinaryTreeTests
     {
         [Fact]
-        public void PreOrder_ShouldReturnNodesInPreOrder()
+        public void TestMirrorTree()
         {
-            // Arrange
-            var tree = new BinaryTree(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            BinaryTree tree = new BinaryTree(4);
+            tree.Root.Left = new Node(8);
+            tree.Root.Right = new Node(7);
+            tree.Root.Left.Left = new Node(12);
+            tree.Root.Left.Right = new Node(9);
 
-            var expectedOrder = new List<int> { 1, 2, 4, 5, 3 };
-            var actualOrder = new List<int>();
+            List<int> originalInorder = tree.InorderTraversal();
+            Assert.Equal(new List<int> { 12, 8, 9, 4, 7 }, originalInorder);
 
-            // Act
-            tree.PreOrder(tree.Root);
-            CaptureOutput(tree.PreOrder, tree.Root, actualOrder);
+            tree.Mirror();
 
-            // Assert
-            Assert.Equal(expectedOrder, actualOrder);
+            List<int> mirroredInorder = tree.InorderTraversal();
+            Assert.Equal(new List<int> { 7, 4, 9, 8, 12 }, mirroredInorder);
         }
 
         [Fact]
-        public void InOrder_ShouldReturnNodesInInOrder()
+        public void TestSingleNodeTree()
         {
-            // Arrange
-            var tree = new BinaryTree(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            BinaryTree tree = new BinaryTree(1);
 
-            var expectedOrder = new List<int> { 4, 2, 5, 1, 3 };
-            var actualOrder = new List<int>();
+            List<int> originalInorder = tree.InorderTraversal();
+            Assert.Equal(new List<int> { 1 }, originalInorder);
 
-            // Act
-            CaptureOutput(tree.InOrder, tree.Root, actualOrder);
+            tree.Mirror();
 
-            // Assert
-            Assert.Equal(expectedOrder, actualOrder);
+            List<int> mirroredInorder = tree.InorderTraversal();
+            Assert.Equal(new List<int> { 1 }, mirroredInorder);
         }
 
         [Fact]
-        public void PostOrder_ShouldReturnNodesInPostOrder()
+        public void TestEmptyTree()
         {
-            // Arrange
-            var tree = new BinaryTree(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            BinaryTree tree = new BinaryTree();
 
-            var expectedOrder = new List<int> { 4, 5, 2, 3, 1 };
-            var actualOrder = new List<int>();
+            List<int> originalInorder = tree.InorderTraversal();
+            Assert.Empty(originalInorder);
 
-            // Act
-            CaptureOutput(tree.PostOrder, tree.Root, actualOrder);
+            tree.Mirror();
 
-            // Assert
-            Assert.Equal(expectedOrder, actualOrder);
-        }
-
-        private void CaptureOutput(Action<Node> traversalMethod, Node node, List<int> output)
-        {
-            // Temporarily redirect the console output
-            var originalConsoleOut = Console.Out;
-            try
-            {
-                using (var writer = new StringWriter())
-                {
-                    Console.SetOut(writer);
-                    traversalMethod(node);
-                    writer.Flush();
-                    var lines = writer.ToString().Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                    foreach (var line in lines)
-                    {
-                        if (int.TryParse(line, out int value))
-                        {
-                            output.Add(value);
-                        }
-                    }
-                }
-            }
-            finally
-            {
-                // Restore the original console output
-                Console.SetOut(originalConsoleOut);
-            }
+            List<int> mirroredInorder = tree.InorderTraversal();
+            Assert.Empty(mirroredInorder);
         }
     }
 }
