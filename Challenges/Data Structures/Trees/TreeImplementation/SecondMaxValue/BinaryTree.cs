@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TreeImplementation
+namespace TreeImplementation.SecondMaxValue
 {
     public class BinaryTree
     {
@@ -57,6 +57,42 @@ namespace TreeImplementation
 
             return result;
         }
+
+        public int? FindSecondMax()
+{
+    if (Root == null)
+        throw new InvalidOperationException("The tree is empty.");
+
+    int? max = null;
+    int? secondMax = null;
+
+    void Traverse(Node node)
+    {
+        if (node == null)
+            return;
+
+        if (max == null || node.Value > max)
+        {
+            secondMax = max;
+            max = node.Value;
+        }
+        else if (node.Value < max && (secondMax == null || node.Value > secondMax))
+        {
+            secondMax = node.Value;
+        }
+
+        Traverse(node.Left);
+        Traverse(node.Right);
+    }
+
+    Traverse(Root);
+
+    if (secondMax == null)
+        throw new InvalidOperationException("There is no second maximum value in the tree.");
+
+    return secondMax;
+}
+
 
         // Print tree structure
         public void Print()

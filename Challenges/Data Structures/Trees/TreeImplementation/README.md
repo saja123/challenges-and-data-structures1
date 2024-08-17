@@ -1,13 +1,11 @@
-﻿## Mirror Tree
-
-# Mirror Tree_OutPut
-![outputMirror](outputMirror.png)
+﻿
 
 
-## Mirror Tree_Tests
-![TestMirror](TestMirror.png)
+# Second Maximum Value in Binary Tree
+![OutputSecond.png](OutputSecond.png)
+![TestSecond.png](TestSecond.png)
+![MiroSecond.png](MiroSecond.png)
 
-## Mirror Tree_Miro
-![BIGOTree](BIGOTree.png)
+
 
 

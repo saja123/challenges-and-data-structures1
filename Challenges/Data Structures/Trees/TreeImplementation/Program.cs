@@ -1,4 +1,5 @@
 ﻿using System;
+using TreeImplementation.SecondMaxValue;
 
 namespace TreeImplementation
 {
@@ -6,33 +7,50 @@ namespace TreeImplementation
     {
         static void Main(string[] args)
         {
-  
             BinaryTree Btree = new BinaryTree();
-            Btree.Root = new Node(4);
-            Btree.Root.Left = new Node(8);
-            Btree.Root.Right = new Node(7);
-            Btree.Root.Left.Left = new Node(12);
-            Btree.Root.Left.Right = new Node(9);
+            Btree.Root = new Node(10);
+            Btree.Root.Left = new Node(5);
+            Btree.Root.Right = new Node(20);
+            Btree.Root.Left.Left = new Node(3);
+            Btree.Root.Left.Right = new Node(7);
+            Btree.Root.Right.Left = new Node(15);
+            Btree.Root.Right.Right = new Node(25);
 
-            Console.WriteLine("Original Tree:");
+            Console.WriteLine("Tree Structure:");
             Btree.Print();
 
-            var originalInorder = Btree.InorderTraversal();
-            Console.WriteLine("\nOriginal InOrder Traversal:");
-            Console.WriteLine("[" + string.Join(", ", originalInorder) + "]");
-
- 
-            Btree.Mirror();
-
-            Console.WriteLine("\nMirrored Tree:");
-            Btree.Print();
-
-            var mirroredInorder = Btree.InorderTraversal();
-            Console.WriteLine("\nMirrored InOrder Traversal:");
-            Console.WriteLine("[" + string.Join(", ", mirroredInorder) + "]");
+            int? secondMax = Btree.FindSecondMax();
+            Console.WriteLine($"\nThe second maximum value in the tree is: {secondMax}");
         }
     }
 }
+
+
+    //BinaryTree Btree = new BinaryTree();
+    //Btree.Root = new Node(4);
+    //Btree.Root.Left = new Node(8);
+    //Btree.Root.Right = new Node(7);
+    //Btree.Root.Left.Left = new Node(12);
+    //Btree.Root.Left.Right = new Node(9);
+
+    //Console.WriteLine("Original Tree:");
+    //Btree.Print();
+
+    //var originalInorder = Btree.InorderTraversal();
+    //Console.WriteLine("\nOriginal InOrder Traversal:");
+    //Console.WriteLine("[" + string.Join(", ", originalInorder) + "]");
+
+
+    //Btree.Mirror();
+
+    //Console.WriteLine("\nMirrored Tree:");
+    //Btree.Print();
+
+    //var mirroredInorder = Btree.InorderTraversal();
+    //Console.WriteLine("\nMirrored InOrder Traversal:");
+    //Console.WriteLine("[" + string.Join(", ", mirroredInorder) + "]");
+
+
 
 
 
