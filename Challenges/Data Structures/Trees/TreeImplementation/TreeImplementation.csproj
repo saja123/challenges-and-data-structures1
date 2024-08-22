@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="MirrorTree\" />
+    <Folder Include="SecondMaxValue\" />
   </ItemGroup>
 
 </Project>

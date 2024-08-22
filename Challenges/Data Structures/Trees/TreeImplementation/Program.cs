@@ -1,5 +1,6 @@
 ﻿using System;
-using TreeImplementation.SecondMaxValue;
+using TreeImplementation.LeafSum;
+
 
 namespace TreeImplementation
 {
@@ -8,19 +9,34 @@ namespace TreeImplementation
         static void Main(string[] args)
         {
             BinaryTree Btree = new BinaryTree();
-            Btree.Root = new Node(10);
-            Btree.Root.Left = new Node(5);
-            Btree.Root.Right = new Node(20);
+            Btree.Root = new Node(9);
+            Btree.Root.Left = new Node(8);
+            Btree.Root.Right = new Node(12);
             Btree.Root.Left.Left = new Node(3);
             Btree.Root.Left.Right = new Node(7);
-            Btree.Root.Right.Left = new Node(15);
-            Btree.Root.Right.Right = new Node(25);
+            Btree.Root.Right.Left = new Node(17);
+            Btree.Root.Right.Right = new Node(23);
+            Btree.Root.Left.Left.Right = new Node(4);
 
             Console.WriteLine("Tree Structure:");
             Btree.Print();
 
-            int? secondMax = Btree.FindSecondMax();
-            Console.WriteLine($"\nThe second maximum value in the tree is: {secondMax}");
+            int leafSum = Btree.SumOfLeafNodes();
+            Console.WriteLine($"\nThe sum of all leaf nodes in the tree is: {leafSum}");
+            //BinaryTree Btree = new BinaryTree();
+            //Btree.Root = new Node(10);
+            //Btree.Root.Left = new Node(5);
+            //Btree.Root.Right = new Node(20);
+            //Btree.Root.Left.Left = new Node(3);
+            //Btree.Root.Left.Right = new Node(7);
+            //Btree.Root.Right.Left = new Node(15);
+            //Btree.Root.Right.Right = new Node(25);
+
+            //Console.WriteLine("Tree Structure:");
+            //Btree.Print();
+
+            //int? secondMax = Btree.FindSecondMax();
+            //Console.WriteLine($"\nThe second maximum value in the tree is: {secondMax}");
         }
     }
 }
