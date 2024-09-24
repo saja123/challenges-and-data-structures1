@@ -11,32 +11,28 @@ namespace challenges_and_data_structures1
         {
             var minStack = new MinStack();
 
-            minStack.Push(15);
-            minStack.Push(7);
-            minStack.Push(12);
-            minStack.Push(3);
+            linkedList.AddNode(1);
+            linkedList.AddNode(2);
+            linkedList.AddNode(3);
+            linkedList.AddNode(4);
+            linkedList.AddNode(5);
+            linkedList.AddNode(6);
 
-            Console.Write("Current Stack: ");
-            minStack.PrintStack();
+            Console.WriteLine("Original List:");
+            linkedList.Display();
 
-            Console.WriteLine($"Minimum Element: {minStack.GetMin()}");
+            int k = 2;
+            Console.WriteLine($"\nRotating the list to the left by {k} positions:");
+            linkedList.RotateLeft(k);
 
-            Console.WriteLine($"Popped Element: {minStack.Pop()}");
+            linkedList.Display();
 
-            Console.Write("Stack after Pop: ");
-            minStack.PrintStack();
+            k = 3;
+            Console.WriteLine($"\nRotating the list to the left by {k} positions:");
+            linkedList.RotateLeft(k);
 
-            Console.WriteLine($"New Minimum Element: {minStack.GetMin()}");
-
-            Console.WriteLine($"Top Element: {minStack.Top()}");
-
-            minStack.Push(2);
-            Console.Write("Stack after Push 2: ");
-            minStack.PrintStack();
-
-            Console.WriteLine($"New Minimum Element: {minStack.GetMin()}");
-
-            Console.WriteLine($"Is Stack Empty: {minStack.IsEmpty()}");
+            linkedList.Display();
+            Console.ReadKey();
         }
     }
 }
